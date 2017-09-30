@@ -1,0 +1,11 @@
+/*
+ * common
+ */
+
+body {
+  zoom: 1;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  font: 16px/1.5 "Microsoft Yahei", Tahoma, Arial, Helvetica, STHeiti;
+}

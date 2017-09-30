@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>App Manage</title>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
+</head>
+<body>
+<link rel="stylesheet" href="/stylesheets/app.css"/>
+<div class="container">
+  <form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/>
+  </form>
+  <fieldset>
+    <legend class="red">App Manage</legend>
+    <!-- App Add-->
+    <form method="get" action="/app/add" th:attr="action=@{/app/add}">
+      <p class="red">App Add</p>
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" name="name" placeholder="Text Name Here"/></td>
+        </tr>
+        <tr>
+          <td>Version:</td>
+          <td><input type="text" name="version" placeholder="Text Version Here"/></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Submit"/></td>
+        </tr>
+      </table>
+    </form>
+    <!-- App List -->
+    <table class="list" border="1">
+      <thead>
+      <tr>
+        <th width="10">ID</th>
+        <th width="20">Name</th>
+        <th width="40">Version</th>
+        <th width="20">CreatedAt</th>
+        <th width="10">Operation</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="app: ${apps}">
+        <td th:text="${app.id}"></td>
+        <td th:text="${app.name}"></td>
+        <td th:text="${app.version}"></td>
+        <td th:text="${app.createdAt}"></td>
+        <td><a href="/app/delete"
+               th:href="@{/app/delete(id=${app.id})}">Delete</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+/*
+ * admin
+ */
+
+.container {
+  text-align: center;
+}
+
+.admin-menu {
+  margin:0 auto;
+  width: 400px;
+  height: 200px;
+  text-align: left;
+}
+
+fieldset {
+  margin: 20px;
+  padding: 20px;
+}

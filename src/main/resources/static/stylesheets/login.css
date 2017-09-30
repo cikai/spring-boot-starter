@@ -1,0 +1,24 @@
+/*
+ * login
+ */
+
+.container {
+  text-align: center;
+}
+
+.login-form {
+  margin:0 auto;
+  width: 400px;
+  height: 200px;
+  text-align: left;
+}
+
+fieldset {
+  margin: 20px;
+  padding: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 15px;
+}
